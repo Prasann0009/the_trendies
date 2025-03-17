@@ -66,13 +66,15 @@ const Home = () => {
   const { products, loading, error } = useSelector((state) => state.products);
   const [bestSellerProduct, setBestSellerProduct] = useState(null);
 
+  console.log(products);
   useEffect(() => {
     //Fetch products for a specific collection
+
     dispatch(
       fetchProductsByFilters({
         gender: "Women",
-        category: "Bottom Wear",
-        limit: 8,
+        category: "Top Wear",
+        limit: 4,
       })
     );
     //Fetch best seller product
